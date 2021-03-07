@@ -7,13 +7,13 @@ function! asyncomplete#sources#shellcommand#completor(opt, ctx)
   let l:kwlen = len(l:kw)
   let l:startcol = l:col - l:kwlen
 
-  let l:command_name_all = "g:asyncomplete#sources#shellcommand#command"
   let l:command_name_ft = "g:asyncomplete#sources#shellcommand#" . &ft . "#command"
+  let l:command_name_all = "g:asyncomplete#sources#shellcommand#command"
 
-  if exists(l:command_name_all)
-    let l:command_name = l:command_name_all
-  elseif exists(l:command_name_ft)
+  if exists(l:command_name_ft)
     let l:command_name = l:command_name_ft
+  elseif exists(l:command_name_all)
+    let l:command_name = l:command_name_all
   endif
 
   if !exists(l:command_name)
