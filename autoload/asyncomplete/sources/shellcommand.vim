@@ -22,7 +22,7 @@ function! asyncomplete#sources#shellcommand#completor(opt, ctx)
   endif
 
   let l:command = eval(l:command_name)
-  let l:command = substitute(l:command, "${token}", l:typed, "g") 
+  let l:command = substitute(l:command, "${token}", l:kw, "g") 
 
   let l:words = split(system(l:command), "\n")
 
