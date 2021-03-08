@@ -19,3 +19,5 @@ call asyncomplete#register_source({
     \ 'completor': function('asyncomplete#sources#shellcommand#completor'),
     \ })
 ```
+
+- `${token}` in the command will be replaced by the actual keyword you typed
